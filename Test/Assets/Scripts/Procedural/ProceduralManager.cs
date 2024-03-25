@@ -5,6 +5,8 @@ using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
 public class ProceduralManager : MonoBehaviour
 {
     public bool isBusy = false;
@@ -23,8 +25,9 @@ public class ProceduralManager : MonoBehaviour
 
     public Transform _canvas;
     public GameObject buttonPrefab;
-    
-    
+
+
+    public List<string> wrongOptionList;
     public void Start()
     {
         _object = FindObjectsOfType<ProceduralObject>().ToList();
@@ -48,14 +51,17 @@ public class ProceduralManager : MonoBehaviour
             return;
         if(selectedObject==GetProceduralObjectWithName(objectname).gameObject)
             return;
+        
+        selectedObject = GetProceduralObjectWithName(objectname).gameObject;
+        DestroyButton();
         if (String.Equals(proceduralQueue.Peek().objectName, objectname))
         {
-            selectedObject = GetProceduralObjectWithName(objectname).gameObject;
             SetButton();
         }
+        
         else
         {
-            Debug.Log("Salah object");
+            SetButtonSalah();
 
         }
     }
@@ -71,24 +77,41 @@ public class ProceduralManager : MonoBehaviour
                 temp.GetComponent<Button>().onClick.AddListener(RightAnswer);
             }
         }
+    }    
+    public void SetButtonSalah()
+    {
+        for (int i = 0; i < wrongOptionList.Count; i++)
+        {
+            GameObject temp = Instantiate(buttonPrefab, _canvas);
+            temp.GetComponentInChildren<Text>().text = wrongOptionList[i];
+        }
     }
+
+    public void DestroyButton()
+    {
+        foreach (Transform VARIABLE in _canvas)
+        {
+            Destroy(VARIABLE.gameObject);
+        }
+    }
+
+    private Coroutine runningScenario;
     public void RightAnswer()
     {
-        StartCoroutine(RightAnswerCoroutine());
+        runningScenario=StartCoroutine(RightAnswerCoroutine());
     }
     
     IEnumerator RightAnswerCoroutine()
     {
         isBusy = true;
         bool isWait = false;
-        foreach (Transform VARIABLE in _canvas)
-        {
-            Destroy(VARIABLE.gameObject);
-        }
+
+        DestroyButton();
         ProceduralStep tempstep = proceduralQueue.Dequeue();
         
         foreach (var VARIABLE in tempstep._doSomethingList)
         {
+            selectedObject = null;
 
             while (isWait)
             {
@@ -126,6 +149,20 @@ public class ProceduralManager : MonoBehaviour
                     }
                     completeevent?.Invoke();
                     break;
+                case DoSomethingEnum.RandomEvent:
+                    RandomEvent(delegate { isWait = false; });
+                    break;
+                case DoSomethingEnum.Wait:
+                    isWait = true;
+                    float timer = VARIABLE.waitTime;
+                    while (timer>0)
+                    {
+                        timer -= Time.deltaTime;
+                        Debug.Log(timer);
+                        yield return null;
+                    }
+                    isWait = false;
+                    break;
             
             }
         }
@@ -141,5 +178,28 @@ public class ProceduralManager : MonoBehaviour
     public void ChangingRotation(GameObject gameobject,Vector3 targetrot,Action completeevent=null)
     {
         gameobject.transform.DOLocalRotate(targetrot,1f).OnComplete(delegate { completeevent?.Invoke(); });
+    }
+
+    public void RandomEvent(Action isComplete)
+    {
+        int temp = Random.Range(0, 2);
+        
+        if (temp == 0)
+        {
+            
+            StopCoroutine(runningScenario);
+            isBusy = false;
+            return;
+        }
+        
+        proceduralQueue.Dequeue();
+        isComplete?.Invoke();
+        
+        
+    }
+
+    public void Waiting()
+    {
+        
     }
 }

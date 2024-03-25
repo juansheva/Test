@@ -9,7 +9,6 @@ public class ProceduralStep
     public string objectName;
     public List<string> option;
     public int rightOption;
-
     public List<DoSomething> _doSomethingList;
 }
 
@@ -20,6 +19,8 @@ public class DoSomething
     public DoSomethingEnum whatThisDo;
 
     public Vector3 target;
+    public float waitTime;
+
 }
 
 public enum DoSomethingEnum
@@ -27,5 +28,7 @@ public enum DoSomethingEnum
     ChangeObject,
     ChangePosition,
     ChangeRotation,
-    RotatingAroundObject
+    RotatingAroundObject,
+    RandomEvent,
+    Wait
 }

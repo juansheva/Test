@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class ProceduralObject : MonoBehaviour
 {
     public string objectName;
+    public string ongoingScene;
     public List<GameObject> gameObjectsList;
 
     public delegate void ObjectSelectEvent(string objectname);

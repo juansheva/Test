@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Bawang
+  ongoingScene: 
   gameObjectsList:
   - {fileID: 6669968781797802568}
   - {fileID: 681482833551611612}
@@ -484,6 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Sendok
+  ongoingScene: 
   gameObjectsList: []
 --- !u!1 &1621990012
 GameObject:
@@ -539,9 +541,10 @@ MonoBehaviour:
     - Buang
     rightOption: 0
     _doSomethingList:
-    - isCutGroup: 0
+    - isCutGroup: 1
       whatThisDo: 0
       target: {x: 0, y: 0, z: 0}
+      waitTime: 0
   - objectName: Bawang
     option:
     - Potong
@@ -549,9 +552,10 @@ MonoBehaviour:
     - Buang
     rightOption: 0
     _doSomethingList:
-    - isCutGroup: 0
+    - isCutGroup: 1
       whatThisDo: 0
       target: {x: 0, y: 0, z: 0}
+      waitTime: 0
   - objectName: Telur
     option:
     - Pecahkan ke mangkuk
@@ -559,9 +563,10 @@ MonoBehaviour:
     - Buang
     rightOption: 0
     _doSomethingList:
-    - isCutGroup: 0
+    - isCutGroup: 1
       whatThisDo: 1
       target: {x: -0.698, y: 1.8112218, z: 3.205}
+      waitTime: 0
   - objectName: Sendok
     option:
     - Aduk Telur
@@ -572,18 +577,23 @@ MonoBehaviour:
     - isCutGroup: 0
       whatThisDo: 1
       target: {x: -0.673, y: 2.046, z: 3.122}
+      waitTime: 0
     - isCutGroup: 1
       whatThisDo: 2
       target: {x: 0, y: 0, z: -90}
+      waitTime: 0
     - isCutGroup: 1
       whatThisDo: 3
       target: {x: -1.3170005, y: -1.2939999, z: -7.7090006}
+      waitTime: 0
     - isCutGroup: 0
       whatThisDo: 1
       target: {x: -0.673, y: 1.878, z: 1.751}
-    - isCutGroup: 0
+      waitTime: 0
+    - isCutGroup: 1
       whatThisDo: 2
       target: {x: -1.3170005, y: -1.2939999, z: -7.7090006}
+      waitTime: 0
   - objectName: Kecap Asin
     option:
     - Tuangkan Bahan2
@@ -594,11 +604,199 @@ MonoBehaviour:
     - isCutGroup: 0
       whatThisDo: 1
       target: {x: -0.684, y: 2.805, z: 3.78}
-    - isCutGroup: 0
+      waitTime: 0
+    - isCutGroup: 1
       whatThisDo: 2
       target: {x: 90, y: 0, z: 0}
+      waitTime: 0
+    - isCutGroup: 0
+      whatThisDo: 1
+      target: {x: 0.3560078, y: 1.811245, z: 1.8291335}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 2
+      target: {x: -90, y: 0, z: 0}
+      waitTime: 0
+  - objectName: Sendok
+    option:
+    - Aduk bahan
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 0
+      whatThisDo: 1
+      target: {x: -0.723, y: 2.223, z: 3.571}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 2
+      target: {x: 0, y: 0, z: 90}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 3
+      target: {x: -1.8600005, y: -1.1039999, z: -7.6830006}
+      waitTime: 0
+    - isCutGroup: 0
+      whatThisDo: 1
+      target: {x: -0.673, y: 1.878, z: 1.751}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 2
+      target: {x: 0, y: 0, z: 0}
+      waitTime: 0
+  - objectName: Ayam
+    option:
+    - Masukkan ayam ke bumbu
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -0.632, y: 1.904, z: 3.859}
+      waitTime: 0
+  - objectName: Wajan
+    option:
+    - Siapkan Wajan
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 0
+      whatThisDo: 1
+      target: {x: -0.31344628, y: 2.384, z: 0.4408419}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 2
+      target: {x: 316.97205, y: 270, z: 90}
+      waitTime: 0
+    - isCutGroup: 0
+      whatThisDo: 1
+      target: {x: -0.31344628, y: 1.8959329, z: 0.4408419}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 2
+      target: {x: 270.01978, y: 0, z: 0}
+      waitTime: 0
+  - objectName: Gas
+    option:
+    - Cek Gas
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -1.45, y: 0.2700988, z: 0.06}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 4
+      target: {x: 0, y: 0, z: 0}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -0.16811347, y: 0.2700988, z: 0.060681224}
+      waitTime: 0
+  - objectName: Gas
+    option:
+    - Ganti Gas
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -1.45, y: 0.2700988, z: 7.89}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -1.45, y: 0.2700988, z: 0.06}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -0.16811347, y: 0.2700988, z: 0.060681224}
+      waitTime: 0
+  - objectName: Cetekan Kompor
+    option:
+    - 'Nyalakan api '
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 1
+      whatThisDo: 2
+      target: {x: 328.71338, y: 270, z: 269.68588}
+      waitTime: 0
+  - objectName: Minyak
+    option:
+    - Tuang minyak
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 0
+      whatThisDo: 1
+      target: {x: -0.381, y: 2.72, z: 0.478}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 2
+      target: {x: 85.42307, y: -0.0000024167641, z: 0.0000024167641}
+      waitTime: 0
+    - isCutGroup: 0
+      whatThisDo: 1
+      target: {x: 0.3560078, y: 1.811245, z: 2.6885648}
+      waitTime: 0
+    - isCutGroup: 0
+      whatThisDo: 2
+      target: {x: 270.01978, y: 0, z: 0}
+      waitTime: 0
+    - isCutGroup: 1
+      whatThisDo: 2
+      target: {x: 270.01978, y: 0, z: 0}
+      waitTime: 0
+    - isCutGroup: 0
+      whatThisDo: 5
+      target: {x: 0, y: 0, z: 0}
+      waitTime: 5
+  - objectName: Bawang
+    option:
+    - Masukkan Bawang
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -0.391, y: 2.053, z: 0.453}
+      waitTime: 0
+  - objectName: Ayam
+    option:
+    - Masukkan Ayam
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -0.391, y: 2.053, z: 0.453}
+      waitTime: 0
+  - objectName: Telur
+    option:
+    - Masukkan Telur
+    - Lempar
+    - Buang
+    rightOption: 0
+    _doSomethingList:
+    - isCutGroup: 1
+      whatThisDo: 1
+      target: {x: -0.391, y: 2.053, z: 0.453}
+      waitTime: 0
   _canvas: {fileID: 215349188}
   buttonPrefab: {fileID: 3634333861802092669, guid: 0ddf5568f3754964e903b1978b7c81a4, type: 3}
+  wrongOptionList:
+  - Ini salah
+  - Bener2 Salah
+  - Salah
   selectedObject: {fileID: 0}
 --- !u!1 &1675112802
 GameObject:
@@ -863,6 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Ayam
+  ongoingScene: 
   gameObjectsList:
   - {fileID: 4074758025466060424}
   - {fileID: 2660349326202191710}
@@ -1051,7 +1250,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6062109323823521163}
-  - {fileID: 2463035723754791703}
   - {fileID: 6191996604990677371}
   - {fileID: 2727289217109699661}
   - {fileID: 7277497570678343306}
@@ -1063,10 +1261,12 @@ Transform:
   - {fileID: 3538477918270072648}
   - {fileID: 1558918735}
   - {fileID: 2565205138094644694}
-  - {fileID: 6723216401982922455}
-  - {fileID: 6645823806074277942}
-  - {fileID: 4397940158793564725}
   - {fileID: 2651309934962012179}
+  - {fileID: 6645823806074277942}
+  - {fileID: 8389761175840753236}
+  - {fileID: 2463035723754791703}
+  - {fileID: 6723216401982922455}
+  - {fileID: 4397940158793564725}
   - {fileID: 5758831992630280126}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -1735,8 +1935,10 @@ GameObject:
   - component: {fileID: 6645823806074277942}
   - component: {fileID: 5366159434405458498}
   - component: {fileID: 7202271456452082904}
+  - component: {fileID: 7202271456452082905}
+  - component: {fileID: 7202271456452082906}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Gas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1947,7 +2149,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8389761175840753236}
   - {fileID: 2735633632937514595}
   - {fileID: 9010205753420794255}
   - {fileID: 1410791257842796266}
@@ -2046,6 +2247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Kecap Asin
+  ongoingScene: 
   gameObjectsList: []
 --- !u!64 &4461417115534105502
 MeshCollider:
@@ -2529,8 +2731,10 @@ GameObject:
   - component: {fileID: 2463035723754791703}
   - component: {fileID: 7714425556320284324}
   - component: {fileID: 313278964796434201}
+  - component: {fileID: 7714425556320284326}
+  - component: {fileID: 7714425556320284325}
   m_Layer: 0
-  m_Name: bottle_oil
+  m_Name: Oil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2578,6 +2782,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7202271456452082905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655000509152510983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e2541da8a2b5343bc496be25d0a374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Gas
+  ongoingScene: 
+  gameObjectsList: []
+--- !u!64 &7202271456452082906
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655000509152510983}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 5c44804484cace44e9df00e17321cb0a, type: 3}
 --- !u!4 &7277497570678343306
 Transform:
   m_ObjectHideFlags: 0
@@ -2672,8 +2913,10 @@ GameObject:
   - component: {fileID: 8389761175840753236}
   - component: {fileID: 4691617202940074040}
   - component: {fileID: 3529394846257048972}
+  - component: {fileID: 8389761175840753238}
+  - component: {fileID: 8389761175840753237}
   m_Layer: 0
-  m_Name: knob
+  m_Name: Stove Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2686,6 +2929,43 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7168756069024351479}
+  m_Mesh: {fileID: -4242604942052864023, guid: 5c44804484cace44e9df00e17321cb0a, type: 3}
+--- !u!114 &7714425556320284325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168756069024351479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e2541da8a2b5343bc496be25d0a374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Minyak
+  ongoingScene: 
+  gameObjectsList: []
+--- !u!64 &7714425556320284326
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168756069024351479}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -4242604942052864023, guid: 5c44804484cace44e9df00e17321cb0a, type: 3}
 --- !u!4 &7832438039373878512
 Transform:
@@ -2753,13 +3033,50 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7643860563113584169}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.49024498, z: -0, w: 0.87158465}
-  m_LocalPosition: {x: -0.87425137, y: -0.62899894, z: 1.6903939}
+  m_LocalRotation: {x: -0.61630344, y: -0.34665558, z: 0.34665558, w: 0.61630344}
+  m_LocalPosition: {x: -0.8742514, y: 1.6903937, z: 0.6289988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4397940158793564725}
+  m_Father: {fileID: 543450651932110316}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8389761175840753237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643860563113584169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e2541da8a2b5343bc496be25d0a374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Cetekan Kompor
+  ongoingScene: 
+  gameObjectsList: []
+--- !u!64 &8389761175840753238
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643860563113584169}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4930194293119932124, guid: 5c44804484cace44e9df00e17321cb0a, type: 3}
 --- !u!4 &8404486563976527596
 Transform:
   m_ObjectHideFlags: 0
@@ -2786,8 +3103,10 @@ GameObject:
   - component: {fileID: 2651309934962012179}
   - component: {fileID: 9136121371232881828}
   - component: {fileID: 1988345859720761367}
+  - component: {fileID: 9136121371232881829}
+  - component: {fileID: 9136121371232881830}
   m_Layer: 0
-  m_Name: stirfryer
+  m_Name: Stir Fryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2863,6 +3182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Telur
+  ongoingScene: 
   gameObjectsList: []
 --- !u!64 &8762527605572523630
 MeshCollider:
@@ -3011,6 +3331,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8627053991624382356}
   m_Mesh: {fileID: -5113555229677901335, guid: 5c44804484cace44e9df00e17321cb0a, type: 3}
+--- !u!64 &9136121371232881829
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627053991624382356}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5113555229677901335, guid: 5c44804484cace44e9df00e17321cb0a, type: 3}
+--- !u!114 &9136121371232881830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627053991624382356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e2541da8a2b5343bc496be25d0a374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Wajan
+  ongoingScene: 
+  gameObjectsList: []
 --- !u!23 &9213874344835502237
 MeshRenderer:
   m_ObjectHideFlags: 0
