@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
@@ -28,12 +29,45 @@ public class ProceduralManager : MonoBehaviour
 
 
     public List<string> wrongOptionList;
-    public void Start()
+    
+    
+    
+    private string assetName = "Kitchen";
+    private string bundleName = "Test";
+
+    IEnumerator Start()
     {
-        _object = FindObjectsOfType<ProceduralObject>().ToList();
+        var assetBundleLoadRequest =
+            AssetBundle.LoadFromFileAsync(Path.Combine(Application.streamingAssetsPath, bundleName));
+        
+        yield return assetBundleLoadRequest;
+        
+        var localAssetBundle = assetBundleLoadRequest.assetBundle;
+        
+        if (localAssetBundle == null)
+        {
+            Debug.LogError("Failed to load AssetBundle!");
+            yield break;
+        }
+        
+        var assetLoadRequest = localAssetBundle.LoadAssetAsync<GameObject>(assetName);
+        yield return assetLoadRequest;
+        
+        GameObject asset = (GameObject)assetLoadRequest.asset;
+        
+        Instantiate(asset);
+        
+        localAssetBundle.Unload(false);
+
+        
+
+
+        _object = FindObjectsOfType<ProceduralObject>(true).ToList();
         proceduralQueue = new Queue<ProceduralStep>(_steps);
 
         ProceduralObject.objectSelectEvent += SelectObject;
+
+        yield return null;
 
     }
 
@@ -150,7 +184,8 @@ public class ProceduralManager : MonoBehaviour
                     completeevent?.Invoke();
                     break;
                 case DoSomethingEnum.RandomEvent:
-                    RandomEvent(delegate { isWait = false; });
+                    isWait = true;
+                    RandomEvent(delegate { completeevent?.Invoke(); });
                     break;
                 case DoSomethingEnum.Wait:
                     isWait = true;
@@ -161,9 +196,28 @@ public class ProceduralManager : MonoBehaviour
                         Debug.Log(timer);
                         yield return null;
                     }
-                    isWait = false;
+                    completeevent?.Invoke();
                     break;
             
+                case DoSomethingEnum.HideObject:
+                    foreach (var selectedobject in VARIABLE.listSelectObject)
+                    {
+                        GameObject temp = GetProceduralObjectWithName(selectedobject).gameObject;
+                        temp.SetActive(false);
+                    }
+                    break;
+                case DoSomethingEnum.ShowObject:
+                    foreach (var selectedobject in VARIABLE.listSelectObject)
+                    {
+                        GameObject temp = GetProceduralObjectWithName(selectedobject).gameObject;
+                        temp.SetActive(true);
+                    }
+                    break;
+                case DoSomethingEnum.ChangePositionOther:
+
+                    ChangingPosition(GetProceduralObjectWithName(VARIABLE.otherObject).gameObject,VARIABLE.target,completeevent);
+                    
+                    break;
             }
         }
 
@@ -194,12 +248,5 @@ public class ProceduralManager : MonoBehaviour
         
         proceduralQueue.Dequeue();
         isComplete?.Invoke();
-        
-        
-    }
-
-    public void Waiting()
-    {
-        
     }
 }

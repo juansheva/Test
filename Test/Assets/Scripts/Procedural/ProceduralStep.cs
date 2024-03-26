@@ -21,6 +21,10 @@ public class DoSomething
     public Vector3 target;
     public float waitTime;
 
+    public string otherObject;
+
+    public List<string> listSelectObject;
+
 }
 
 public enum DoSomethingEnum
@@ -30,5 +34,8 @@ public enum DoSomethingEnum
     ChangeRotation,
     RotatingAroundObject,
     RandomEvent,
-    Wait
+    Wait,
+    HideObject,
+    ShowObject,
+    ChangePositionOther
 }

@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 845132839
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 060e44716391ce4c1d9c14b4a7212737
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 06b8bc721a8b8175844fe33f705e8a28
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 89e2541da8a2b5343bc496be25d0a374, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Kitchen.prefab
+Dependencies: []
