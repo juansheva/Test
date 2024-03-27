@@ -35,6 +35,9 @@ public class ProceduralManager : MonoBehaviour
     private string assetName = "Kitchen";
     private string bundleName = "Test";
 
+    public GameObject a;
+    public GameObject x;
+
     IEnumerator Start()
     {
         var assetBundleLoadRequest =
@@ -67,12 +70,29 @@ public class ProceduralManager : MonoBehaviour
 
         ProceduralObject.objectSelectEvent += SelectObject;
 
+        a = GetProceduralObjectWithName(proceduralQueue.Peek().objectName).gameObject;
+
         yield return null;
 
     }
 
-    public void Procedure()
+    private void Update()
     {
+        UI();
+    }
+
+    public void UI()
+    {
+        if (a)
+        {
+            Vector3 y = a.transform.position;
+            // y.y += 1;
+            Vector3 temp = Camera.main.WorldToScreenPoint(y);
+            x.transform.position = temp;
+
+        }
+
+
     }
 
     public GameObject selectedObject;
@@ -221,6 +241,10 @@ public class ProceduralManager : MonoBehaviour
             }
         }
 
+        if (proceduralQueue.Count > 0)
+        {
+            a = GetProceduralObjectWithName(proceduralQueue.Peek().objectName).gameObject;
+        }
         isBusy = false;
 
     }
@@ -242,6 +266,7 @@ public class ProceduralManager : MonoBehaviour
         {
             
             StopCoroutine(runningScenario);
+            a = GetProceduralObjectWithName(proceduralQueue.Peek().objectName).gameObject;
             isBusy = false;
             return;
         }
